@@ -4,7 +4,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
 import { projects, navLinks } from "../constants";
+
+// --- THIS WAS THE MISSING LINE ---
 import ContactForm from "../components/ContactForm";
+// --------------------------------
 
 export default function Portfolio() {
 
@@ -47,16 +50,14 @@ export default function Portfolio() {
             </span>
           </h1>
           <p className="max-w-2xl mx-auto text-gray-400 text-lg mb-10 leading-relaxed">
-            I'm Karan Singh, a Full Stack Developer with a passion for Java, AI, and building intelligent solutions.
-            Currently focused on accessible, human-centered products.
+            I am a Full Stack Developer specializing in building exceptional digital experiences.
+            Currently, I am focused on accessible, human-centered products.
           </p>
 
           <div className="flex gap-6 justify-center">
-            {/* UPDATED LINKS BELOW */}
-            <SocialButton icon={<FaGithub />} href="https://github.com/karankr-singh" />
-            <SocialButton icon={<FaLinkedin />} href="https://www.linkedin.com/in/karan-singh-79a1a5290/" />
-            {/* Replace this with your actual email when you are ready */}
-            <SocialButton icon={<FaEnvelope />} href="mailto:your.email@example.com" />
+            <SocialButton icon={<FaGithub />} href="https://github.com" />
+            <SocialButton icon={<FaLinkedin />} href="https://linkedin.com" />
+            <SocialButton icon={<FaEnvelope />} href="mailto:youremail@example.com" />
           </div>
         </motion.div>
       </section>
@@ -90,12 +91,13 @@ export default function Portfolio() {
           </p>
         </div>
 
+        {/* The Contact Form Component */}
         <ContactForm />
 
       </section>
 
       <footer className="py-8 text-center text-gray-500 text-sm bg-gray-900 border-t border-gray-800">
-        <p>© 2026 Karan Singh. Built with Next.js & Tailwind.</p>
+        <p>© 2024 DevPortfolio. Built with Next.js & Tailwind.</p>
       </footer>
 
     </div>
@@ -128,7 +130,6 @@ function ProjectCard({ project, index }) {
     >
       <div className="relative h-48 w-full overflow-hidden">
         <div className="absolute inset-0 bg-teal-900/20 z-10 group-hover:bg-transparent transition duration-300"></div>
-        {/* Note: This assumes you have valid images in /public. If not, it might show a broken icon until you add them. */}
         <Image
           src={project.image}
           alt={project.title}
